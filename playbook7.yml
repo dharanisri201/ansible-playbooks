@@ -1,0 +1,17 @@
+---
+ - name: file and folder creation
+   hosts: all
+   tasks:
+    - name: file creation
+      file:
+       name: "{{a}}"
+       state: "{{b}}"
+    - name: folder creation
+      file:
+       name: "{{c}}"
+       state: "{{d}}"
+    - name: copying file and folder
+      copy:
+       content: "{{e}}"
+       dest: "{{f}}"
+...       

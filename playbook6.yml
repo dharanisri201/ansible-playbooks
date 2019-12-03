@@ -1,0 +1,14 @@
+---
+ - name: git repo
+   hosts: all
+   tasks: 
+    - name: software installations 
+      apt:
+       name: "{{a}}"
+       state: "{{b}}"
+       update_cache: "{{c}}"
+    - name: cloning repo
+      git:
+        repo: "{{d}}"
+        dest: "{{e}}"
+...

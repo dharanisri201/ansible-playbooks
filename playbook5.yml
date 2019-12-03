@@ -1,0 +1,10 @@
+---
+ - name: multiple users
+   hosts: all
+   tasks:
+    - name: users
+      user:
+       name: "{{a}}"
+       uid: "{{b}}"
+       home: "{{c}}"
+...       

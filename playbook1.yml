@@ -1,0 +1,25 @@
+---
+ - name: my first configuration
+   hosts: all
+   tasks:
+    - name: install tomcat8
+      apt:
+       name: tomcat8
+       state: present
+    - name: change port no
+      replace: 
+       regexp: 8080
+       replace: 9090
+       path: /etc/tomcat8/server.xml
+    - name: tomcat restart
+      service:
+       name: tomcat8
+       state: restarted
+ - name: 2nd git config
+   hosts: all
+   tasks:
+    - name: install git
+      apt:
+       name: git
+       state: present
+...

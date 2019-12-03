@@ -1,0 +1,13 @@
+---
+ - name: git installing and cloning a repository
+   hosts: all
+   tasks: 
+    - name: installing git
+      apt:
+       name: git
+       state: present
+    - name: cloning a repo
+      git:
+       repo: https://github.com/TheAlgorithms/Java.git
+       dest: /home/ubuntu/gituuu
+...

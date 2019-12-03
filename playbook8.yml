@@ -1,0 +1,15 @@
+---
+ - name: playscope variables demo
+   hosts: all
+   vars:
+    - a: mysql-server
+    - b: absent
+    - c: yes
+   tasks:
+    - name: installing/uninstalling
+      apt:
+       name: "{{a}}"
+       state: "{{b}}"
+       update_cache: "{{c}}"
+...
+

@@ -1,0 +1,20 @@
+---
+ - name: install and uninstall with_items
+   hosts: all
+   tasks:
+    - name: install and uninstall
+      apt:
+       name: "{{item.a}}"
+       state: "{{item.b}}"
+       update-cache: "{{item.c}}"
+      with_items: 
+       - {a: git,b: absent,c: yes}
+       - {a: mysql-server,b: present,c: no}
+    - name: creating users
+      user:
+       name: "{{item.d}}"
+       uid: "{{item.e}}"
+      with_items:
+       - {d: udaya,e: 14569}
+       - {d: sravs,e: 25896}
+...     

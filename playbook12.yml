@@ -1,0 +1,10 @@
+---
+ - name: single hosts variables
+   hosts: 172.31.41.54
+   tasks:
+    - name: install tree
+      apt:
+       name: "{{a}}"
+       state: "{{b}}"
+       update_cache: "{{c}}"
+...

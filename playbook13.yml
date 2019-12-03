@@ -1,0 +1,13 @@
+---
+ - name: with-items demonstration
+   hosts: all
+   tasks:
+    - name: install multiple softwares
+      apt:
+       name: "{{item}}"
+       state: present
+       update_cache: yes
+      with_items:
+         - tree
+         - git
+      

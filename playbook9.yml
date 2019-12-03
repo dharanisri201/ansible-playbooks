@@ -1,0 +1,15 @@
+---
+ - name: user creation using playscope variables
+   hosts: all
+   vars:
+    - a: mad
+      b: 2345
+      c: /home/ubuntu/madhu123
+   tasks:
+    - name: user creation 
+      user:
+       name: "{{a}}"
+       uid: "{{b}}"
+       home: "{{c}}"
+...
+

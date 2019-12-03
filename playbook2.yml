@@ -1,0 +1,17 @@
+---
+ - name: apache configuration
+   hosts: all
+   tasks: 
+    - name: apache tomcat install
+      apt: 
+       name: apache2
+       state: present
+    - name: content changing
+      copy:
+       content: hi this is uday
+       dest: /var/www/html/index.html
+    - name: apache restart
+      service:
+       name: apache2
+       state: restarted
+...
