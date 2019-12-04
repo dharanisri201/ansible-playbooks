@@ -1,0 +1,19 @@
+---
+ - name: user creation
+   hosts: all
+   tasks:
+    - name: user creation
+      user:
+       name: /home/ubuntu/mnbvvcxz
+       uid: 987456321
+       home: /home/ubuntu/mnbvvcxz
+      notify: directory_creation
+   handlers:
+    - name: directory_creation
+      file:
+       name: /home/ubuntu/lkjhgfds
+       state: directory
+...
+      
+              
+       

@@ -1,0 +1,11 @@
+---
+ - name: install tree using conditional statements
+   hosts: all
+   vars:
+    - a: 3
+   tasks:
+    - name: install tree
+      apt: 
+       name: git
+       state: present
+      when: a<=10

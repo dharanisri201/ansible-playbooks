@@ -1,0 +1,8 @@
+---
+ - name: child
+   user:
+    name: /home/ubuntu/mad
+    uid: 123456
+    home: /home/ubuntu/mad
+...
+

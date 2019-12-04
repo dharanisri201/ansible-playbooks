@@ -1,0 +1,22 @@
+---
+ - name: error handling demo
+   hosts: all
+   tasks:
+    - block:
+       - name: apache demo
+         apt: 
+          name: uday
+          state: present
+      rescue:
+       - name: install maven
+         apt:
+          name: maven
+          state: present
+      always:
+       - name: restarting service
+         service:
+          name: apache2
+          state: restarted
+...
+
+

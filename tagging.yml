@@ -1,0 +1,21 @@
+---
+ - name: tagging demo in ansible
+   hosts: all
+   tasks:
+    - name: install maven
+      apt:
+       name: nginx
+       state: absent
+      become: yes
+      tags: nginx-install
+    - name: copy module
+      file:
+       name: /home/ubuntu/madvi
+       state: touch
+      become: yes 
+      tags: file-creation
+    - name: copy module
+      copy:
+       content: uday
+       dest: /home/ubuntu/udai
+...

@@ -1,0 +1,16 @@
+---
+ - name: handlers implementation
+   hosts: all
+   tasks:
+    - name: install mysql-server
+      apt:
+       name: apache2
+       state: present
+       update_cache: yes
+      notify: file_creation
+   handlers:
+    - name: file_creation
+      file:
+       name: /home/ubuntu/uday111
+       state: touch
+... 
